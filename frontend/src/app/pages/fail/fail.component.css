@@ -1,0 +1,27 @@
+.wrapper {
+  height: 100vh;
+  margin: 0 auto;
+  padding: 50px 50px 100px 50px;
+}
+
+.fail-msg {
+  margin-bottom: 25px;
+  opacity: 0;
+  margin-top: 75px;
+  transition: opacity 600ms, margin-top 600ms;
+}
+
+.fail-msg.loaded {
+  margin-top: 25px;
+  opacity: 1;
+}
+
+.fail-msg {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 6px;
+}

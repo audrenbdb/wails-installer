@@ -1,0 +1,11 @@
+<div class="wrapper" *ngIf="installer">
+  <div class="success-msg" [class.loaded]="successMessageLoaded">
+    <div class="success-icon"></div>
+    <p [innerHTML]="sanitizer.bypassSecurityTrustHtml(installer.texts.success)"></p>
+    <div class="see-more" (click)="toggleExpand()"></div>
+  </div>
+  <div class="step-history" *ngIf="expanded" [@fadeIn]="'in'">
+    <h3 [innerHTML]="sanitizer.bypassSecurityTrustHtml(installer.texts.completedSteps)"></h3>
+    <div *ngFor="let s of installer.steps" class="description" [innerHTML]="sanitizer.bypassSecurityTrustHtml(s.description)"></div>
+  </div>
+</div>

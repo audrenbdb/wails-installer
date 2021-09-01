@@ -1,0 +1,21 @@
+<div class="wrapper" *ngIf="installer">
+  <div #conditions class="conditions">
+    <h1 [innerHTML]="sanitizer.bypassSecurityTrustHtml(installer.title)"></h1>
+    <div [@fadeInList]="installer.conditions.length">
+      <div class="condition" *ngFor="let condition of installer.conditions">
+        <h3 [innerHTML]="sanitizer.bypassSecurityTrustHtml(condition.title)"></h3>
+        <p [innerHTML]="sanitizer.bypassSecurityTrustHtml(condition.body)"></p>
+      </div>
+    </div>
+  </div>
+  <div class="btn-wrapper">
+    <div class="accept-btn-wrapper" [class.disabled]="!isRead && installer.mustReadAllConditions">
+      <div class="accept-btn-tooltip" *ngIf="!isRead && installer.mustReadAllConditions"
+           [innerHTML]="sanitizer.bypassSecurityTrustHtml(installer.texts.readAllConditionsTooltip)"
+      ></div>
+      <div class="accept-btn" (click)="onAccept()"
+           [innerHTML]="sanitizer.bypassSecurityTrustHtml(installer.texts.acceptButton)"></div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,25 @@
+{
+ "name": "installer",
+ "description": "Enter your project description",
+ "author": {
+  "name": "Audren Bouëssel du Bourg",
+  "email": "audren.bdb@gmail.com"
+ },
+ "version": "0.1.0",
+ "binaryname": "installer",
+ "frontend": {
+  "dir": "frontend",
+  "install": "npm install",
+  "build": "npx ng build --single-bundle true --output-hashing none --prod --bundle-styles false",
+  "bridge": "src",
+  "serve": "npm run serve"
+ },
+ "tags": "",
+ "WailsVersion": "",
+ "CrossCompile": false,
+ "Platform": "",
+ "Architecture": "",
+ "LdFlags": "",
+ "GoPath": "",
+ "UseFirebug": false
+}

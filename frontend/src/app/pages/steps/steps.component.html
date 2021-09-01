@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="anchor" *ngIf="installer && runningStep">
+    <div class="anchor-layer">
+        <div class="status-icon"></div>
+        <div class="description">
+          <p [innerHTML]="sanitizer.bypassSecurityTrustHtml(runningStep.description)"></p>
+        </div>
+    </div>
+    <div *ngFor="let s of installer.steps; index as i" class="process"
+         [class.long-done]="s.done && s !== lastDoneStep && s !== runningStep"
+         [class.done]="s === lastDoneStep"
+         [class.running]="s === runningStep"
+         [class.upcoming]="s === upcomingStep"
+         [class.far-upcoming]="!s.done && s !== upcomingStep && s !== runningStep"
+         [class.first-appear]="!loadAnimation"
+    >
+        <div class="status-wrapper">
+          <div class="loader" *ngIf="s === runningStep && !s.done"></div>
+          <div *ngIf="s !== runningStep || s.done" class="status-icon" [class.done]="s.done" [class.upcoming]="s === upcomingStep"></div>
+        </div>
+
+        <div class="description">
+          <div class="index">{{i + 1}}/{{installer.steps.length}}</div>
+          <p [innerHTML]="sanitizer.bypassSecurityTrustHtml(s.description)"></p>
+        </div>
+    </div>
+  </div>
+</div>

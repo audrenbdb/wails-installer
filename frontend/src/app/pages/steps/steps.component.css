@@ -1,0 +1,125 @@
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.anchor {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.anchor-layer {
+  opacity: 0;
+}
+
+.anchor-layer, .process {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  color: #495966;
+  display: flex;
+  align-items: center;
+}
+
+.process {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 300ms, top 500ms, left 500ms;
+  transform: translate3d(0,0,0);
+  left: 0;
+  top: 0;
+}
+
+.far-upcoming {
+  top: 100%;
+  left: -10%;
+}
+
+.long-done {
+  top: -100%;
+  left: -10%;
+}
+
+
+.process.done {
+  opacity: .7;
+}
+
+.process.done {
+  top: -75px;
+  left: -20px;
+  z-index: 1;
+}
+
+.process.upcoming {
+  top: 75%;
+  left: -20px;
+  z-index: 0;
+  opacity: .4;
+}
+
+.process.running {
+  opacity: 1;
+  z-index: 2;
+}
+
+.status-icon {
+  background-position-x: center;
+  background-position-y: center;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+}
+
+.status-icon.upcoming {
+  background-image: url('data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAaUlEQVRoge3WQQqAIABE0TmX9wcP4IFsFUTkQrKGkf/AdfNBQgkAAAAATEpt3b3hlVJbj444A2IjrgGREfeAuIingKURow/8ceIDlkQQ4L5CX4seL234G3XvmRY9XtrkMefeAAAAACDTAcYM2ojNfB3lAAAAAElFTkSuQmCC');
+}
+
+.status-icon.done {
+  background-image: url('data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAfklEQVRoge3SwQmAMBBE0dSV/iEFWJCe5iIoJBFmR/5rYP/AtgYAAPA/fRxnH8fp7lii+MgR9/ioEU/xEQOIdyHehXgX4l1s8V8cKhG/erBU/Oxh+8/vBNjjd0LKxK8ElYufCSsbL2+B5eMlOl6i4yU6XqLjJTpeouMBAMCGCw3HibHxitv9AAAAAElFTkSuQmCC');
+}
+
+.status-wrapper {
+  padding:20px;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid rgb(58, 199, 211);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.description {
+  position: relative;
+  flex-basis: 100%;
+  padding: 20px 20px 20px 0;
+}
+
+.index {
+  position: absolute;
+  color: #c1c1c1;
+  right: 0;
+  top: 15px;
+  right: 15px
+}
+
+.first-appear {
+  top: 75% !important;
+  left: -20px !important;
+  opacity: 0 !important;
+}
+
+

@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <div class="fail-msg" *ngIf="installer" [class.loaded]="msgLoaded">
+    <div class="fail-icon"></div>
+    <p [innerHTML]="sanitizer.bypassSecurityTrustHtml(installer.texts.fail)"></p>
+    <i>{{errMsg || 'undefined'}}</i>
+  </div>
+</div>

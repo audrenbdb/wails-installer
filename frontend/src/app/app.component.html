@@ -1,0 +1,7 @@
+<!-- we mimic router outlet below to handle cross platform error with IE11 -->
+<div class="wrapper" *ngIf="installer">
+  <app-conditions [installer]="installer" *ngIf="installer.status === Status.NotAccepted"></app-conditions>
+  <app-steps *ngIf="installer.status === Status.Processing"></app-steps>
+  <app-success *ngIf="installer.status === Status.DoneWithoutError"></app-success>
+  <app-fail *ngIf="installer.status === Status.DoneWithError"></app-fail>
+</div>

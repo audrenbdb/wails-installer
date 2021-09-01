@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  font-family: "Roboto", "Oxygen",
+  "Ubuntu", "Helvetica Neue", "Calibri", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  overflow-x: hidden;
+  background-color: #f8fafb;
+  color: #495966;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
